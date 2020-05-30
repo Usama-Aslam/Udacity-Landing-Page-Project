@@ -28,5 +28,15 @@
   margin: 0 auto;
   color: red;
   display: block;
+}
 
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.spacer {
+  height: 40px;
 }
