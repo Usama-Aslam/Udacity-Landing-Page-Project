@@ -1,4 +1,4 @@
-//Build the menu dynamically
+/Build the menu dynamically
 
 let unorderedList = document.getElementById("unordered-list");
 let containerCount = document.getElementsByClassName("landing__container")
@@ -21,7 +21,9 @@ for (i = 1; i < containerCount + 1; i++) {
   let buttonName = "section" + i + "-button";
   let buttonToAdd = document.getElementById(buttonName);
 
-  listTarget.addEventListener("click", function() {
+  //Adds button when scrolls into view
+
+  listTarget.addEventListener("click", function () {
     itemTarget.scrollIntoView();
 
     buttonToAdd.innerHTML =
@@ -29,6 +31,7 @@ for (i = 1; i < containerCount + 1; i++) {
   });
 }
 
+// On button click, goes to top of page 
 function goToTop() {
   document.documentElement.scrollTop = 0;
 
@@ -39,15 +42,16 @@ function goToTop() {
   }
 }
 
+//Checks if section is in view and adds active-class with moving background and color change
 function checkIfSectionInView() {
-  let isInViewport = function(elem) {
+  let isInViewport = function (elem) {
     let bounding = elem.getBoundingClientRect();
     return (
       bounding.top <= 50 &&
       bounding.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
+      (window.innerHeight || document.documentElement.clientHeight) &&
       bounding.right <=
-        (window.innerWidth || document.documentElement.clientWidth)
+      (window.innerWidth || document.documentElement.clientWidth)
     );
   };
 
@@ -56,7 +60,7 @@ function checkIfSectionInView() {
 
     window.addEventListener(
       "scroll",
-      function(event) {
+      function (event) {
         if (isInViewport(sectionInFullView)) {
           sectionInFullView.classList.add("your-active-class");
         } else {
