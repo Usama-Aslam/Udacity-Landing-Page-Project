@@ -1,4 +1,4 @@
-/Build the menu dynamically
+//Build the menu dynamically
 
 let unorderedList = document.getElementById("unordered-list");
 let containerCount = document.getElementsByClassName("landing__container")
@@ -31,7 +31,7 @@ for (i = 1; i < containerCount + 1; i++) {
   });
 }
 
-// On button click, goes to top of page 
+// On button click, goes to top of page
 function goToTop() {
   document.documentElement.scrollTop = 0;
 
@@ -49,9 +49,9 @@ function checkIfSectionInView() {
     return (
       bounding.top <= 50 &&
       bounding.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) &&
+        (window.innerHeight || document.documentElement.clientHeight) &&
       bounding.right <=
-      (window.innerWidth || document.documentElement.clientWidth)
+        (window.innerWidth || document.documentElement.clientWidth)
     );
   };
 
